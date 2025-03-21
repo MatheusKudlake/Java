@@ -1,4 +1,6 @@
 import javax.swing.JOptionPane;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -32,17 +34,15 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         System.out.println("Insira uma sequência de números:");
-        String texto = input.next();
+        String texto = input.nextLine();
 
-        int[] numeros;
-        //numeros = new int[(texto.length()+1)/2];
-        numeros = new int[texto.length()];
+        String[] numerosString = texto.split("-");
+        Integer[] numeros = new Integer[numerosString.length];
 
-        for(int i=0; i<texto.length(); i++){
-            if(i%2==0){
-                numeros[i]=texto.charAt(i)-'0';
-            }
+        for(int i=0; i<numerosString.length; i++){
+            numeros[i] = Integer.parseInt(numerosString[i]);
         }
+        Arrays.sort(numeros, Collections.reverseOrder());
         System.out.println(Arrays.toString(numeros));
-        }
     }
+}
