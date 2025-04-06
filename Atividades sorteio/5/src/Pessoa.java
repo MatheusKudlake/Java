@@ -2,11 +2,25 @@ public class Pessoa {
     private int idade;
     private String cpf;
 
-    public Pessoa() {};
-    public Pessoa(int idade){
+    public Pessoa(String cpf){
+        this.cpf = cpf;
+    }
+
+    public Pessoa(String cpf, int idade){
         this.idade = idade;
     }
-    public Pessoa(String cpf){
+
+    public int getIdade(){
+        return this.idade;
+    }
+    public void setIdade(int valor){
+        this.idade = valor;
+    }
+
+    public String getCpf(){
+        return this.cpf;
+    }
+    public void setCpf(String cpf){
         this.cpf = cpf;
     }
 
