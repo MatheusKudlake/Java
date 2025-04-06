@@ -11,8 +11,8 @@ public class Poluicao {
 
     public String lerIndice(float valor){
         this.indice = valor;
-        if(){
-
+        if(this.indice <= 0.16){
+            return "o índice de poluição está aceitável.";
         }else if(this.indice < 0.25){
             return "as indústrias do grupo deverão reduzir em 50% suas atividades.";
         }else if(this.indice < 0.4){
