@@ -3,10 +3,11 @@ public class Pessoa {
     private String cpf;
 
     public Pessoa(String cpf){
+
         this.cpf = cpf;
     }
 
-    public Pessoa(String cpf, int idade){
+    public Pessoa(int idade, String cpf){
         this.idade = idade;
     }
 
