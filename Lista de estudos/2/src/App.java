@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class App {
     public static void main(String[] args) throws Exception {
         Ponto2D ponto1 = new Ponto2D(0, 0);
@@ -15,7 +17,8 @@ public class App {
         System.out.println(n1.toString());
         System.out.println(n1.obterModulo());
 
-        //Reta
-
+        int numeros[] = new int[]{1, 2, 3, 4, 5};
+        System.out.println(Arrays.toString(numeros));
+        
     }
 }
