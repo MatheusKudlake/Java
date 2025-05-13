@@ -16,16 +16,15 @@ public class App {
         p2.setCpf("222222222");
         pessoas.add(p2);
 
-        Endereco e1 = new Endereco("Rua do alface");
+        Endereco e1 = new Endereco("Rua do alface", 55);
+        Endereco e2 = new Endereco("Rua da cebola", 43);
 
         p1.setEndereco(e1);
-        p2.setEndereco(e1); 
+        p2.setEndereco(e2); 
 
         for(Pessoa p : pessoas){
             System.out.println(p.toString());
             System.out.println("---------------------");
         }
-
-
     }
 }
