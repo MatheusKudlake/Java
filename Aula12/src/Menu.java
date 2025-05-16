@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Menu {
     public static int gerarMenu(Scanner scan) {
@@ -17,8 +18,8 @@ public class Menu {
                             "\n2. Círculo" +
                             "\n3. Triângulo" +
                             "\n4. Sair" +
-                            "Selecione uma opção:";
-        System.out.println("-----------------------");
+                            "\nSelecione uma opção:" +
+                            "\n-----------------------";
         System.out.println(textoMenu);
         return scan.nextInt();
     }
@@ -65,4 +66,55 @@ public class Menu {
         return new Triangulo(altura, largura, nome);
     }
 
+    public static void editarForma(Scanner scan, Forma2D forma){
+        System.out.println(forma);
+        int entrada = selecionarAtributos(scan, forma);
+        scan.nextLine(); // Limpar buffer
+        switch(entrada){
+            case 1:
+                System.out.println("Insira o novo valor: ");
+                forma.setNome(scan.nextLine());
+                break;
+            case 2:
+                System.out.println("Insira o novo valor: ");
+                forma.setAltura(scan.nextDouble());
+                break;
+            case 3:
+                System.out.println("Insira o novo valor: ");
+                forma.setLargura(scan.nextDouble());
+                break;
+            case 4:
+                if(forma instanceof Circulo){
+                System.out.println("Insira o novo valor: ");
+                ((Circulo)forma).setAltura(scan.nextDouble());
+                ((Circulo)forma).setLargura(scan.nextDouble());
+                }else{
+                    System.out.println("Opção inválida!");
+                }
+                break;
+            default:
+                System.out.println("Opção inválida!");
+        }
+        
+    }
+
+    public static int listarObjetos(Scanner scan, ArrayList<Forma2D> lista){
+        int i = 1;
+        for(Forma2D f : lista){
+            System.out.println("[" + i + "]:" + f);
+            i++;
+        }
+        System.out.println("Selecione o índice do objeto: ");
+        return scan.nextInt()-1;
+    }
+
+    private static int selecionarAtributos(Scanner scan, Forma2D forma){
+        String textoMenu = "1. Nome" + 
+                            "\n2. Altura" + 
+                            "\n3. Largura";
+        if(forma instanceof Circulo) textoMenu += "\n 4. Diâmetro";
+        textoMenu += "\nSelecione o atributo:";
+        System.out.println(textoMenu);
+        return scan.nextInt();
+}
 }

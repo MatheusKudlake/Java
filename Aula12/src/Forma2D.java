@@ -36,9 +36,6 @@ public abstract class Forma2D {
 
     @Override
     public String toString(){
-        return  "Forma2D" + 
-                "\nNome: " + this.nome + 
-                "\nAltura: " + this.altura + 
-                "\nLargura: " + this.largura;
+        return  "[" + this.nome + "]" + "[" + this.altura + "]" + "[" + this.largura + "]";
     }
 }

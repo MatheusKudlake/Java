@@ -21,4 +21,9 @@ public class Circulo extends Forma2D {
         double raio = this.getAltura() / 2;
         return 3.14 * Math.pow(raio, 2);
     }
+
+    @Override
+    public String toString(){
+        return "[" + this.getNome() + "]" + "[" + this.getLargura() + "]";
+    }
 }
